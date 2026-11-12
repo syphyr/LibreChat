@@ -49,6 +49,16 @@ mcpServers:
       SEARXNG_URL: 'http://searxng-core:8080'
       NO_PROXY: 'searxng-core,localhost,127.0.0.1'
 
+  stable-diffusion:
+    type: stdio
+    command: node
+    args:
+      - '/app/sd-mcp.js'
+    env:
+      HTTP_PROXY: ''
+      HTTPS_PROXY: ''
+      NO_PROXY: 'stable-diffusion-vulkan,localhost,127.0.0.1'
+
 speech:
   tts:
     allowedAddresses:
