@@ -21,22 +21,25 @@ endpoints:
       apiKey: 'ollama'
       baseURL: 'http://ollama:11434/v1/'
       models:
-        default: ['qwen3.6:35b-a3b', 'qwen3.6-nothink']
+        default: ['qwen3.6-uncensored:35b-a3b']
         fetch: true
       titleConvo: false
       summarize: true
-      summaryModel: 'qwen3.6-nothink'
+      summaryModel: 'qwen3.6-uncensored:35b-a3b'
 
 memory:
   disabled: false
   personalize: true
-  tokenLimit: 2500
-  messageWindowSize: 6
+  tokenLimit: 1000
+  messageWindowSize: 2
   validKeys:
     - 'user_preferences'
     - 'learned_facts'
     - 'conversation_context'
     - 'system_setup'
+  agent:
+    provider: 'Ollama'
+    model: 'qwen3.6-uncensored:35b-a3b'
 
 mcpServers:
   searxng:
