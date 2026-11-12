@@ -28,7 +28,7 @@ endpoints:
       summaryModel: 'qwen3.6-uncensored:35b-a3b'
 
 memory:
-  disabled: false
+  disabled: true
   personalize: true
   tokenLimit: 1000
   messageWindowSize: 2
