@@ -21,11 +21,11 @@ endpoints:
       apiKey: 'ollama'
       baseURL: 'http://ollama:11434/v1/'
       models:
-        default: ['qwen3.6-uncensored:35b-a3b']
+        default: ['MiniCPM-V-4.7-35B-A3B-Uncensored2-GGUF:Q6_K']
         fetch: true
       titleConvo: false
       summarize: true
-      summaryModel: 'qwen3.6-uncensored:35b-a3b'
+      summaryModel: 'MiniCPM-V-4.7-35B-A3B-Uncensored2-GGUF:Q6_K'
 
 memory:
   disabled: true
@@ -39,7 +39,7 @@ memory:
     - 'system_setup'
   agent:
     provider: 'Ollama'
-    model: 'qwen3.6-uncensored:35b-a3b'
+    model: 'MiniCPM-V-4.7-35B-A3B-Uncensored2-GGUF:Q6_K'
 
 mcpServers:
   searxng:
