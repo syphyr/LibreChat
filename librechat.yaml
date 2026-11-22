@@ -27,7 +27,7 @@ endpoints:
         promptPrefix: 'When calling the Stable Diffusion image generation tool, ALWAYS set width=704, height=704, steps=8, cfg_scale=1.5, and sampler_index="Euler a".'
       titleConvo: false
       summarize: true
-      summaryModel: 'MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M'
+      summaryModel: 'qwen3:4b-instruct'
 
 memory:
   disabled: true
@@ -41,7 +41,7 @@ memory:
     - 'system_setup'
   agent:
     provider: 'Ollama'
-    model: 'MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M'
+    model: 'qwen3:4b-instruct'
 
 mcpServers:
   searxng:
