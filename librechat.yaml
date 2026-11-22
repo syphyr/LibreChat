@@ -21,11 +21,11 @@ endpoints:
       apiKey: 'ollama'
       baseURL: 'http://ollama:11434/v1/'
       models:
-        default: ['MiniCPM-V-4.7-35B-A3B-Uncensored2-GGUF:Q6_K']
+        default: ['MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M']
         fetch: true
       titleConvo: false
       summarize: true
-      summaryModel: 'MiniCPM-V-4.7-35B-A3B-Uncensored2-GGUF:Q6_K'
+      summaryModel: 'MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M'
 
 memory:
   disabled: true
@@ -39,7 +39,7 @@ memory:
     - 'system_setup'
   agent:
     provider: 'Ollama'
-    model: 'MiniCPM-V-4.7-35B-A3B-Uncensored2-GGUF:Q6_K'
+    model: 'MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M'
 
 mcpServers:
   searxng:
