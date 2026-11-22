@@ -101,3 +101,16 @@ speech:
     textToSpeech:
       engineTTS: 'external'
       voice: 'af_bella'
+
+fileConfig:
+  endpoints:
+    Ollama:
+      fileLimit: 5
+      fileSizeLimit: 20    # Max 20 MB per file
+      totalSizeLimit: 50   # Max 50 MB per message
+    agents:
+      fileLimit: 5
+      fileSizeLimit: 20
+      totalSizeLimit: 50
+  serverFileSizeLimit: 50  # Global max upload size in MB
+  avatarSizeLimit: 2
