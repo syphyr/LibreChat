@@ -44,6 +44,7 @@ memory:
     enabled: true
     provider: 'Ollama'
     model: 'qwen3:4b-instruct'
+    instructions: 'You are a memory extraction assistant. Whenever the user asks you to remember or save information, or mentions personal preferences, hardware/software details, or project facts, you MUST call the set_memory tool immediately using the best matching key from validKeys (user_preferences, learned_facts, conversation_context, system_setup).'
 
 mcpServers:
   searxng:
