@@ -29,7 +29,7 @@ endpoints:
         promptPrefix: 'When calling the Stable Diffusion image generation tool, ALWAYS set width=704, height=704, steps=8, cfg_scale=1.5, and sampler_index="Euler a".'
       titleConvo: false
       summarize: true
-      summaryModel: 'qwen3:4b-instruct'
+      summaryModel: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
 
 memory:
   disabled: false
@@ -44,7 +44,7 @@ memory:
   agent:
     enabled: true
     provider: 'Ollama'
-    model: 'qwen3:4b-instruct'
+    model: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
     instructions: 'You are a memory extraction assistant. Whenever the user asks you to remember or save information, or mentions personal preferences, hardware/software details, or project facts, you MUST call the set_memory tool immediately using the best matching key from validKeys (user_preferences, learned_facts, conversation_context, system_setup).'
 
 mcpServers:
