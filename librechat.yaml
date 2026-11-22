@@ -21,7 +21,7 @@ endpoints:
       apiKey: 'ollama'
       baseURL: 'http://ollama:11434/v1/'
       models:
-        default: ['MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M']
+        default: ['MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q4_K_M']
         fetch: true
       addParams:
         promptPrefix: 'When calling the Stable Diffusion image generation tool, ALWAYS set width=704, height=704, steps=8, cfg_scale=1.5, and sampler_index="Euler a".'
