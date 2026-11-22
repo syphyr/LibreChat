@@ -42,6 +42,7 @@ rl.on("line", async (line) => {
               type: "object",
               properties: {
                 prompt: { type: "string", description: "Detailed image description" },
+                negative_prompt: { type: "string", description: "Things to avoid in the image (optional)" },
               },
               required: ["prompt"],
             },
@@ -53,15 +54,19 @@ rl.on("line", async (line) => {
 
   if (req.method === "tools/call" && req.params?.name === "generate_image") {
     try {
-      const res = await fetch("http://stable-diffusion-vulkan:1234/v1/images/generations", {
+      const args = req.params.arguments || {};
+      const res = await fetch("http://stable-diffusion-vulkan:1234/sdapi/v1/txt2img", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "DreamShaper8_LCM.safetensors",
-          prompt: req.params.arguments?.prompt || "a scenic landscape",
-          n: 1,
-          size: "512x512",
-          response_format: "b64_json",
+          prompt: args.prompt || "a scenic landscape",
+          negative_prompt: args.negative_prompt || "",
+          width: 704,
+          height: 704,
+          steps: 8,
+          cfg_scale: 1.5,
+          sampler_name: "Euler a",
+          batch_size: 1,
         }),
       });
       if (!res.ok) {
@@ -69,7 +74,7 @@ rl.on("line", async (line) => {
         throw new Error(`HTTP ${res.status}: ${errText}`);
       }
       const json = await res.json();
-      const b64 = json.data && json.data[0] && json.data[0].b64_json;
+      const b64 = json.images && json.images[0];
       if (!b64) {
         throw new Error("Unexpected SD response: " + JSON.stringify(json).slice(0, 300));
       }
