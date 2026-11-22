@@ -16,6 +16,7 @@ endpoints:
       - 'context'
       - 'artifacts'
       - 'memory'
+      - 'file_search'
 
   custom:
     - name: 'Ollama'
