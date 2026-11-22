@@ -30,7 +30,7 @@ endpoints:
       summaryModel: 'qwen3:4b-instruct'
 
 memory:
-  disabled: true
+  disabled: false
   personalize: true
   tokenLimit: 1000
   messageWindowSize: 2
@@ -40,6 +40,7 @@ memory:
     - 'conversation_context'
     - 'system_setup'
   agent:
+    enabled: true
     provider: 'Ollama'
     model: 'qwen3:4b-instruct'
 
