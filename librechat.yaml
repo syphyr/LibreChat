@@ -114,3 +114,10 @@ fileConfig:
       totalSizeLimit: 50
   serverFileSizeLimit: 50  # Global max upload size in MB
   avatarSizeLimit: 2
+
+summarization:
+  enabled: true
+  provider: 'Ollama'
+  model: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
+  maxSummaryTokens: 1024
+  reserveRatio: 0.1
