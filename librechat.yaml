@@ -45,7 +45,7 @@ memory:
     enabled: true
     provider: 'Ollama'
     model: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
-    instructions: 'You are a memory extraction assistant. Whenever the user asks you to remember or save information, or mentions personal preferences, hardware/software details, or project facts, you MUST call the set_memory tool immediately using the best matching key from validKeys (user_preferences, learned_facts, conversation_context, system_setup).'
+    instructions: "When calling set_memory or delete_memory, never use pronouns (I, me, you, he, she) or generic labels (the user, the assistant, the AI, where the AI named...). Always refer to the human speaker as {{current_user}}. For the AI speaker, check the conversation messages for its exact proper name (such as a character, persona, or model name stated in the chat) and use that name directly rather than writing 'the AI named X'. If no AI proper name appears in the messages, write the memory focusing solely on {{current_user}} without naming the AI speaker. Extract only concrete, long-term facts, preferences, or interactions as short, direct statements—do not summarize scene framing or roleplay descriptions."
 
 mcpServers:
   searxng:
