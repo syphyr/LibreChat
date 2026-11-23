@@ -45,7 +45,7 @@ memory:
     enabled: true
     provider: 'Ollama'
     model: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
-    instructions: "When calling set_memory or delete_memory, never use pronouns (I, me, you, he, she) or generic labels (the user, the assistant, the AI, where the AI named...). Always refer to the human speaker as {{current_user}}. For the AI speaker, check the conversation messages for its exact proper name (such as a character, persona, or model name stated in the chat) and use that name directly rather than writing 'the AI named X'. If no AI proper name appears in the messages, write the memory focusing solely on {{current_user}} without naming the AI speaker. Extract only concrete, long-term facts, preferences, or interactions as short, direct statements—do not summarize scene framing or roleplay descriptions."
+    instructions: "Extract durable facts, user preferences, and system or project details from the conversation by calling set_memory (or delete_memory if outdated). Rules: (1) Choose the best key from user_preferences, learned_facts, conversation_context, or system_setup. (2) Write short, third-person factual statements. (3) Always refer to the human speaker as {{current_user}}. (4) Refer to the AI only by its exact character or persona name if stated in the chat; otherwise omit the AI completely. (5) Store concrete facts and actions only, skipping scene descriptions, clothing, or roleplay narration."
 
 mcpServers:
   searxng:
