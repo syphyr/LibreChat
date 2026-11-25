@@ -103,6 +103,10 @@ speech:
       voice: 'af_bella'
 
 fileConfig:
+  defaultLLMDeliveryPath:
+    fallback: text
+    overrides:
+      "image/*": provider
   endpoints:
     Ollama:
       fileLimit: 5
