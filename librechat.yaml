@@ -40,9 +40,9 @@ endpoints:
           completion: 0
       addParams:
         promptPrefix: 'When calling the Stable Diffusion image generation tool, ALWAYS set width=704, height=704, steps=8, cfg_scale=1.5, and sampler_index="Euler a".'
-      titleConvo: false
+      titleConvo: true
+      titleModel: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
       summarize: true
-      summaryModel: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
 
 memory:
   disabled: false
@@ -135,9 +135,5 @@ fileConfig:
 summarization:
   enabled: true
   provider: 'Ollama'
-  model: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
-  maxSummaryTokens: 512
-  reserveRatio: 0.2
-  trigger:
-    type: 'token_count'
-    value: 2900
+  maxSummaryTokens: 1024
+  reserveRatio: 0.1
