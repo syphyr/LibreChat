@@ -139,5 +139,5 @@ summarization:
   maxSummaryTokens: 512
   reserveRatio: 0.2
   trigger:
-    type: 'remaining_tokens'
-    value: 38000
+    type: 'token_count'
+    value: 2900
