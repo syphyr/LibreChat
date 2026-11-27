@@ -25,6 +25,19 @@ endpoints:
       models:
         default: ['MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q4_K_M']
         fetch: true
+      tokenConfig:
+        qwen3-4b-instruct-2507-abliterated2:Q4_K_M:
+          context: 4096
+          prompt: 0
+          completion: 0
+        MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q4_K_M:
+          context: 40960
+          prompt: 0
+          completion: 0
+        MiniCPM-V-4.7-35B-A3B-abliterated2-i1-GGUF:Q5_K_M:
+          context: 40960
+          prompt: 0
+          completion: 0
       addParams:
         promptPrefix: 'When calling the Stable Diffusion image generation tool, ALWAYS set width=704, height=704, steps=8, cfg_scale=1.5, and sampler_index="Euler a".'
       titleConvo: false
@@ -123,5 +136,8 @@ summarization:
   enabled: true
   provider: 'Ollama'
   model: 'qwen3-4b-instruct-2507-abliterated2:Q4_K_M'
-  maxSummaryTokens: 1024
-  reserveRatio: 0.1
+  maxSummaryTokens: 512
+  reserveRatio: 0.2
+  trigger:
+    type: 'remaining_tokens'
+    value: 38000
